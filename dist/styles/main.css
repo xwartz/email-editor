@@ -1,0 +1,210 @@
+/* line 12, ../../src/styles/main.scss */
+html, body, div, span, i,
+h1, h2, h3, h4, h5, h6, p,
+a, img, q, ul, li, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: middle;
+}
+
+/* line 25, ../../src/styles/main.scss */
+body {
+  line-height: 1;
+}
+
+/* line 28, ../../src/styles/main.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 32, ../../src/styles/main.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 37, ../../src/styles/main.scss */
+ol li {
+  list-style-type: decimal;
+}
+
+/* line 42, ../../src/styles/main.scss */
+a {
+  text-decoration: none;
+  color: #999;
+}
+/* line 45, ../../src/styles/main.scss */
+a:hover {
+  color: #4e8be7;
+  text-decoration: none;
+}
+/* line 50, ../../src/styles/main.scss */
+a:hover, a:active {
+  outline: 0;
+}
+/* line 54, ../../src/styles/main.scss */
+a:visited {
+  color: #999;
+  text-decoration: none;
+}
+
+/* line 64, ../../src/styles/main.scss */
+.line {
+  width: 100%;
+  height: 0;
+  border: 1px solid #f1f1f1;
+  clear: both;
+}
+
+/* line 71, ../../src/styles/main.scss */
+.email {
+  font-family: "Helvetica Neue", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid #d8e4f6;
+  border-radius: 10px;
+}
+
+/* line 80, ../../src/styles/main.scss */
+.header {
+  text-align: center;
+}
+
+/* line 84, ../../src/styles/main.scss */
+.h-text {
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+/* line 87, ../../src/styles/main.scss */
+.h-text p {
+  font-size: 12px;
+  color: #999;
+  line-height: 16px;
+}
+
+/* line 94, ../../src/styles/main.scss */
+.h-title {
+  background-image: url("../src/images/title.png");
+  width: 342px;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #4e8be7;
+  padding: 12px 0 0 0;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 108, ../../src/styles/main.scss */
+.features {
+  padding: 60px 50px 0;
+}
+
+/* line 112, ../../src/styles/main.scss */
+.feature {
+  font-size: 0;
+}
+
+/* line 116, ../../src/styles/main.scss */
+.col {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  min-height: 300px;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* line 124, ../../src/styles/main.scss */
+.col p {
+  font-size: 14px;
+  color: #333;
+  line-height: 24px;
+}
+/* line 130, ../../src/styles/main.scss */
+.col h3 {
+  font-size: 24px;
+  color: #4e8be7;
+}
+/* line 135, ../../src/styles/main.scss */
+.col h4 {
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 30px;
+  color: #4e8be7;
+}
+
+/* line 143, ../../src/styles/main.scss */
+.col-text {
+  padding-top: 58px;
+  text-align: left;
+}
+
+/* line 148, ../../src/styles/main.scss */
+.col-img {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  text-align: right;
+}
+/* line 152, ../../src/styles/main.scss */
+.col-img.left {
+  text-align: left;
+}
+
+/* line 157, ../../src/styles/main.scss */
+.footer {
+  background: #fafafa;
+  padding: 24px 0 20px;
+}
+
+/* line 162, ../../src/styles/main.scss */
+.platform {
+  text-align: center;
+  font-size: 0;
+  padding: 0 32px 18px 32px;
+}
+/* line 167, ../../src/styles/main.scss */
+.platform h5 {
+  font-size: 14px;
+  color: #4e8be7;
+  padding-bottom: 16px;
+}
+/* line 173, ../../src/styles/main.scss */
+.platform li {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 5px;
+  max-width: 9%;
+}
+/* line 179, ../../src/styles/main.scss */
+.platform li a {
+  font-size: 12px;
+}
+
+/* line 185, ../../src/styles/main.scss */
+.footer-sns {
+  text-align: center;
+}
+/* line 187, ../../src/styles/main.scss */
+.footer-sns a {
+  position: relative;
+  margin: 10px;
+}
+
+/* line 193, ../../src/styles/main.scss */
+.f-help {
+  text-align: center;
+  padding: 12px 0 20px 0;
+}
+/* line 197, ../../src/styles/main.scss */
+.f-help p {
+  color: #999;
+  font-size: 10px;
+  line-height: 18px;
+}
