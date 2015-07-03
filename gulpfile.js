@@ -9,7 +9,8 @@ var inlineCss = require('gulp-inline-css');
 var dirs = {
   src : {
     dest : 'src',
-    styles: 'src/styles'
+    styles: 'src/styles',
+    html: 'index.html'
   },
 
   dist : {
@@ -43,7 +44,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('html', function () {
-  gulp.src('index.html')
+  gulp.src(dirs.src.html)
   .pipe(inlineCss())
   .pipe(gulp.dest('build/'));
   
