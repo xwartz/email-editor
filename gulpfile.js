@@ -10,7 +10,7 @@ var dirs = {
   src : {
     dest : 'src',
     styles: 'src/styles',
-    html: 'index.html'
+    html: 'demo.html'
   },
 
   dist : {
@@ -40,7 +40,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([dirs.src.styles + '/**/*.scss', './index.html'], ['build']);
+  gulp.watch([dirs.src.styles + '/**/*.scss', './*.html'], ['build']);
 });
 
 gulp.task('html', function () {
