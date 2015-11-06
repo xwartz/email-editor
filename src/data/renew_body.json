@@ -1,0 +1,15 @@
+{
+    "title": "Renew ${product_name} Pro Account",
+    "e_title": "Your Pro Account Will Expire",
+    "e_intro": "Dear ${user_display_name}, your Pro account will expire on <span class='e-warn'>${expires_date}</span>, you can renew now. ${product_name} will become better and better together with you.",
+    "e_btn_link": "http://${site_domain}/about/upgrade",
+    "e_action": "Renew Now",
+    "e_footer_title": "Get ${product_name}",
+    "e_footer_forum": "If you need help or give us any feedback, please visit our <a href='https://help.${site_domain}.com'>Help Center</a>.",
+    "e_footer_team": "${product_name} Team",
+    "e_is_cn_site": "#if($is_cn_site==\"false\")",
+    "e_else": "#else",
+    "e_end": "#end",
+    "e_icon_path": "https://${cdn_domain}/static/img/email/icons"
+}
+

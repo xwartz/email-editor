@@ -6,7 +6,10 @@ var gulp = require('gulp'),
     inlineCss = require('gulp-inline-css'),
     data = require('gulp-data'),
     handlebars = require('gulp-compile-handlebars'),
-    path = require('path');
+    path = require('path'),
+    rename = require('gulp-rename'),
+    plumber = require('gulp-plumber'),
+    notify = require('gulp-notify');
 
 
 var dirs = {
@@ -14,16 +17,23 @@ var dirs = {
     data: './src/data',
     hbs: './src/partials',
     styles: './src/styles',
-    images: './src/images'
+    images: './src/img',
     entry: './src/entry',
     dest: './dist',
     build: './build'
 }
 
+var plumberErrorHandler = {
+    errorHandler: notify.onError({
+        message: "Error: <%= error.message %>"
+    })
+};
+
 var styles = function() {
     return gulp.src([dirs.styles + '/**/*.scss'], {
             base: dirs.styles
         })
+        .pipe(plumber(plumberErrorHandler))
         .pipe(compass({
             css: dirs.dest,
             sass: dirs.styles
@@ -47,10 +57,15 @@ var hbs = function() {
     }
 
     return gulp.src([dirs.entry + '/*.hbs'])
-        .pipe(handlebars(data(function (file) {
-          return require(dirs.data + '/' + path.basename(file.path) + '.json');
-        }), options))
+        .pipe(plumber(plumberErrorHandler))
+        .pipe(data(function(file) {
+            return require(dirs.data + '/' + path.basename(file.path, '.hbs') + '.json');
+        }))
+        .pipe(handlebars(data, options))
         .pipe(inlineCss())
+        .pipe(rename(function (path) {
+          path.extname = '.html'
+        }))
         .pipe(gulp.dest(dirs.dest))
         .pipe(gulp.dest(dirs.build));
 
@@ -67,14 +82,15 @@ gulp.task('watch', function() {
 });
 
 gulp.task('hbs', function() {
-  hbs();
+    hbs();
 })
 
 gulp.task('styles', function() {
-  styles();
+    styles();
 })
 
 gulp.task('build', shell.task([
+    'gulp clean',
     'gulp styles',
     'gulp hbs'
 ]));

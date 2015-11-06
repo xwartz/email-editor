@@ -1,0 +1,14 @@
+{
+    "title": "${product_name}高级账户续费提醒",
+    "e_title": "您的高级账户即将到期",
+    "e_intro": "亲爱的${user_display_name}，您的高级账户将于<span class='e-warn'>${expires_date}</span>到期。立即续费即可延长有效期，并发现越来越好的${product_name}。",
+    "e_btn_link": "http://${site_domain}/about/upgrade",
+    "e_action": "立即续费",
+    "e_footer_title": "免费下载${product_name}",
+    "e_footer_forum": "如果您需要任何帮助或者提供反馈, 请访问我们的<a href='https://help.${site_domain}.com'>帮助中心</a>。",
+    "e_footer_team": "${product_name}团队",
+    "e_is_cn_site": "#if($is_cn_site==\"false\")",
+    "e_else": "#else",
+    "e_end": "#end",
+    "e_icon_path": "https://${cdn_domain}/static/img/email/icons"
+}

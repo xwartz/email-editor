@@ -1,0 +1,14 @@
+{
+    "title": "欢迎加入${product_name}",
+    "e_title": "欢迎加入${product_name}",
+    "e_intro": "欢迎加入${product_name}，使它成为您每日必备的工具，来协助您完成所有的待办事项以更好的规划您的生活。首先，请您点击下面的按钮验证您的邮箱，以确保能更好的享受${product_name}服务。",
+    "e_btn_link": "https://${site_domain}/sign/verifyEmail?id=${verify_id}",
+    "e_action": "立即验证",
+    "e_footer_title": "免费下载${product_name}",
+    "e_footer_forum": "如果您需要任何帮助或者提供反馈, 请访问我们的<a href='https://help.${site_domain}.com'>帮助中心</a>。",
+    "e_footer_team": "${product_name}团队",
+    "e_is_cn_site": "#if($is_cn_site==\"false\")",
+    "e_else": "#else",
+    "e_end": "#end",
+    "e_icon_path": "https://${cdn_domain}/static/img/email/icons"
+}

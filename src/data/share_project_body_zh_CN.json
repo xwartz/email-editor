@@ -1,0 +1,14 @@
+{
+    "title": "分享列表",
+    "e_title": "分享列表",
+    "e_intro": "<a href='mailto:${from_username}'>${from_user_display_name}</a>分享了一个列表<span class='e-warn'>${title}</span>给您，点击下方按钮查看",
+    "e_btn_link": "https://${site_domain}/${args}#n/${title}/tasks",
+    "e_action": "立即查看",
+    "e_footer_title": "免费下载${product_name}",
+    "e_footer_forum": "如果您需要任何帮助或者提供反馈, 请访问我们的<a href='https://help.${site_domain}.com'>帮助中心</a>。",
+    "e_footer_team": "${product_name}团队",
+    "e_is_cn_site": "#if($is_cn_site==\"false\")",
+    "e_else": "#else",
+    "e_end": "#end",
+    "e_icon_path": "https://${cdn_domain}/static/img/email/icons"
+}

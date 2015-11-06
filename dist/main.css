@@ -1,0 +1,142 @@
+@charset "UTF-8";
+html, body, div, span, i,
+h1, h2, h3, h4, h5, h6, p,
+a, img, q, ul, li, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: middle;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 auto;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+a {
+  text-decoration: underline;
+  color: #617fde;
+}
+a:hover {
+  color: #617fde;
+}
+a:hover, a:active {
+  outline: 0;
+}
+a:visited {
+  color: #617fde;
+}
+
+.tick-email {
+  font-family: -apple-system, ".SFNSText-Regular", "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Microsoft Yahei", "微软雅黑", "Helvetica Neue", "メイリオ", "ＭＳ Ｐゴシック", Arial, sans-serif;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid #d8e4f6;
+  border-radius: 12px;
+}
+.tick-email .e-header {
+  text-align: center;
+}
+.tick-email .e-header img {
+  margin-top: 42px;
+}
+.tick-email .e-h {
+  padding-top: 22px;
+  padding-bottom: 0;
+}
+.tick-email .e-h h3 {
+  font-size: 28px;
+  color: #4b4b4b;
+  line-height: 1;
+}
+.tick-email .e-intro {
+  color: #979797;
+  font-size: 16px;
+  line-height: 26px;
+  margin: 35px 0;
+}
+.tick-email .e-warn {
+  vertical-align: baseline;
+  color: #ffc817;
+  padding: 0 4px;
+}
+.tick-email .e-section {
+  width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+.tick-email .e-section .e-btn {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  width: 160px;
+  height: 42px;
+  line-height: 42px;
+  font-size: 22px;
+  color: #fff;
+  background-color: #617fde;
+  border-radius: 8px;
+  border-color: #617fde;
+  margin: 0 auto;
+  margin-bottom: 44px;
+  padding: 0 10px;
+}
+.tick-email .e-footer {
+  background: #f7f7f7;
+  padding: 24px 0 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.tick-email .e-platform {
+  text-align: center;
+  font-size: 0;
+  padding: 0 32px 18px 32px;
+}
+.tick-email .e-platform h5 {
+  font-size: 14px;
+  color: #617fde;
+  padding-bottom: 16px;
+}
+.tick-email .e-platform li {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 5px;
+}
+.tick-email .e-platform li a {
+  font-size: 12px;
+}
+.tick-email .e-footer-sns {
+  text-align: center;
+}
+.tick-email .e-footer-sns a {
+  position: relative;
+  text-decoration: none;
+  margin: 10px;
+}
+.tick-email .e-help {
+  text-align: center;
+  padding: 12px 0 20px 0;
+}
+.tick-email .e-help p {
+  color: #999;
+  font-size: 10px;
+  line-height: 18px;
+}

@@ -1,0 +1,15 @@
+{
+    "title": "List Waiting for You",
+    "e_title": "List Waiting for You",
+    "e_intro": "There is a list(<span class='e-wran'>${title}</span>) shared with you from <a href='mailto:${from_username}'>${from_user_display_name}</a>.",
+    "e_btn_link": "https://${site_domain}/${args}#n/${title}/tasks",
+    "e_action": "View Now",
+    "e_footer_title": "Get ${product_name}",
+    "e_footer_forum": "If you need help or give us any feedback, please visit our <a href='https://help.${site_domain}.com'>Help Center</a>.",
+    "e_footer_team": "${product_name} Team",
+    "e_is_cn_site": "#if($is_cn_site==\"false\")",
+    "e_else": "#else",
+    "e_end": "#end",
+    "e_icon_path": "https://${cdn_domain}/static/img/email/icons"
+}
+
