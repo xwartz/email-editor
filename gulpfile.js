@@ -1,62 +1,80 @@
-var gulp = require('gulp');
-var compass = require('gulp-compass');
-var autoprefixer = require('gulp-autoprefixer');
-var shell = require('gulp-shell');
-var del = require('del');
-var fs = require('fs');
-var inlineCss = require('gulp-inline-css');
+var gulp = require('gulp'),
+    compass = require('gulp-compass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    shell = require('gulp-shell'),
+    del = require('del'),
+    inlineCss = require('gulp-inline-css'),
+    data = require('gulp-data'),
+    handlebars = require('gulp-compile-handlebars'),
+    path = require('path');
+
 
 var dirs = {
-  src : {
-    dest : 'src',
-    styles: 'src/styles',
-    html: 'demo.html'
-  },
+    src: './src',
+    data: './src/data',
+    hbs: './src/partials',
+    styles: './src/styles',
+    images: './src/images'
+    entry: './src/entry',
+    dest: './dist',
+    build: './build'
+}
 
-  dist : {
-    dest : 'dist',
-    styles: 'dist/styles'
-  },
+var styles = function() {
+    return gulp.src([dirs.styles + '/**/*.scss'], {
+            base: dirs.styles
+        })
+        .pipe(compass({
+            css: dirs.dest,
+            sass: dirs.styles
+        }))
+        .pipe(autoprefixer('last 2 version', 'ie 8', 'ie 9', 'android 4'))
+        .pipe(gulp.dest(dirs.dest));
+}
 
-  build : {
-    dest : 'build'
-  }
+var hbs = function() {
+    var options = {
+        // ignorePartials: false,
+        // partials: {
+        //     footer: '<footer>the end</footer>'
+        // },
+        batch: [dirs.hbs],
+        // helpers: {
+        //     capitals: function(str) {
+        //         return str.toUpperCase();
+        //     }
+        // }
+    }
 
-};
+    return gulp.src([dirs.entry + '/*.hbs'])
+        .pipe(handlebars(data(function (file) {
+          return require(dirs.data + '/' + path.basename(file.path) + '.json');
+        }), options))
+        .pipe(inlineCss())
+        .pipe(gulp.dest(dirs.dest))
+        .pipe(gulp.dest(dirs.build));
 
-
-gulp.task('styles', function() {
-  gulp.src([dirs.src.styles + '/**/*.scss'], {base : dirs.src.styles})
-    .pipe(compass({
-      css: dirs.dist.styles,
-      sass: dirs.src.styles
-    }))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest(dirs.dist.styles));
-});
+}
 
 gulp.task('clean', function() {
-  del([dirs.dist.dest], {force: true});
+    del([dirs.dest, dirs.build], {
+        force: true
+    });
 });
 
 gulp.task('watch', function() {
-  gulp.watch([dirs.src.styles + '/**/*.scss', './*.html'], ['build']);
+    gulp.watch([dirs.src + '/**/*'], ['build']);
 });
 
-gulp.task('html', function () {
-  gulp.src(dirs.src.html)
-  .pipe(inlineCss())
-  .pipe(gulp.dest('build/'));
-  
+gulp.task('hbs', function() {
+  hbs();
 })
 
-gulp.task('dev',['styles']);
+gulp.task('styles', function() {
+  styles();
+})
 
 gulp.task('build', shell.task([
-  'gulp styles'
-  ,'gulp html'
+    'gulp styles',
+    'gulp hbs'
 ]));
-
-
-
-
