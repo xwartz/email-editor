@@ -2,26 +2,26 @@
   <div class="e-platform">
     <h5>{{e_footer_title}}</h5>
     <ul class="pl">
-    {{e_is_cn_site}}
+     #if ($is_cn_site == "false")
       <li><a href="https://play.google.com/store/apps/details?id=com.ticktick.task">Android</a></li>
       <li><a href="https://itunes.apple.com/app/tick-tick/id626144601">iPhone</a></li>
       <li><a href="https://itunes.apple.com/app/tick-tick/id626144601">iPad</a></li>
-      <li><a href="https://ticktick.com/signin">Web</a></li>
-      <li><a href="https://ticktick.com/static/getApp/download?type=mac">Mac</a></li>
+      <li><a href="https://${site_domain}/signin">Web</a></li>
+      <li><a href="https://${site_domain}/static/getApp/download?type=mac">Mac</a></li>
       <li><a href="https://itunes.apple.com/app/tick-tick/id626144601">Apple Watch</a></li>
-    {{e_else}}
-      <li><a href="https://${site_domain}.com/static/getApp/download?type=apk">Android</a></li>
+    #else
+      <li><a href="https://${site_domain}/static/getApp/download?type=apk">Android</a></li>
       <li><a href="https://itunes.apple.com/cn/app/di-da-qing-dan-dai-ban-shi/id626144601?mt=8">iPhone</a></li>
       <li><a href="https://itunes.apple.com/cn/app/di-da-qing-dan-dai-ban-shi/id626144601?mt=8">iPad</a></li>
-      <li><a href="https://${site_domain}.com/signin">Web</a></li>
-      <li><a href="https://${site_domain}.com/static/getApp/download?type=mac">Mac</a></li>
+      <li><a href="https://${site_domain}/signin">Web</a></li>
+      <li><a href="https://${site_domain}/static/getApp/download?type=mac">Mac</a></li>
       <li><a href="https://itunes.apple.com/cn/app/di-da-qing-dan-dai-ban-shi/id626144601?mt=8">Apple Watch</a></li>
-    {{e_end}}
+    #end
     </ul>
   </div>
 
   <div class="e-footer-sns">
-  {{{e_is_cn_site}}}
+  #if ($is_cn_site == "false")
       <a class="s-sina" href="https://www.facebook.com/TickTickApp" target="_blank">
       <img src="{{e_icon_path}}/f.png" alt="facebook" width="44" height="44">
     </a>
@@ -31,14 +31,14 @@
     <a class="s-google" href="https://plus.google.com/106052725488609251300/posts" target="_blank">
       <img src="{{e_icon_path}}/g.png" alt="google" width="44" height="44">
     </a>
-    {{e_else}}
+    #else
       <a class="s-sina" href="http://weibo.com/ticktickteam" target="_blank">
       <img src="{{e_icon_path}}/weibo.png" alt="weibo" width="44" height="44">
     </a>
     <a class="s-douban" href="http://www.douban.com/people/99840312/" target="_blank">
       <img src="{{e_icon_path}}/douban.png" alt="douban" width="44" height="44">
     </a>
-    {{e_end}}
+    #end
   </div>
 
   <div class="e-help">
